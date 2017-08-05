@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            width: 600px;
+            height: 600px;
+            background-color: aliceblue;
+            position: relative;
+            overflow: hidden;
+        }
+        .text {
+            width: 400px;
+            height: 30px;
+            font-size: 20px;
+            outline: none;
+            position: absolute;
+        }
+        .text:nth-child(1) {
+            left: 100px;
+            top: 70px;
+        }
+        .text:nth-child(2) {
+            left: 100px;
+            top: 150px;
+        }
+        #btn {
+            width: 400px;
+            padding: 10px;
+            font-size: 20px;
+            margin: auto;
+            background-color: rgb(0,178,142);
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            left: 100px;
+            top: 230px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <form action="loginSuccess">
+            <input type="text" placeholder="请输入已验证手机/邮箱" class="text">
+            <input type="text" placeholder="请输入密码" class="text">
+            <button id="btn">登录</button>
+        </form>
+    </div>
+</body>
+</html>
