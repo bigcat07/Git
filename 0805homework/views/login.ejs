@@ -43,11 +43,13 @@
 </head>
 <body>
     <div id="wrap">
-        <form action="loginSuccess">
-            <input type="text" placeholder="请输入已验证手机/邮箱" class="text">
-            <input type="text" placeholder="请输入密码" class="text">
+        <form action="loginSuccess" method="post">
+            <input type="text" placeholder="请输入已验证手机/邮箱" class="text" name="username">
+            <input type="text" placeholder="请输入密码" class="text" name="password">
             <button id="btn">登录</button>
         </form>
+
     </div>
 </body>
 </html>
+
