@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            height: 50px;
+            background-color: aquamarine;
+        }
+        .out {
+            list-style: none;
+        }
+        .in {
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="wrap"></div>
+    <script type="text/babel">
+
+
+
+
+        var arr = ['编程','读书','Java教程','JavaScript教程','Python教程','Git教程','问答','赞助']
+
+        ReactDOM.render(
+                <ul className="out">
+                    {
+                            arr.map(function (name) {
+                                return <li className="in">{name}</li>
+                            })
+                    }
+                </ul>,document.getElementById('wrap')
+        )
+    </script>
+</body>
+</html>

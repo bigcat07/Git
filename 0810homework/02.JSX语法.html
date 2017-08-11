@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // 一下则为JSX语法
+        //html混合 js,JSX 是 js 扩展
+            //定义常量element
+            //既有js,又有html
+//            const element =<h1>Hello,React!</h1>
+             //2.在JSX中使用表达式
+             function formatName(user) {
+                 return user.firstName + ' ' + user.lastName
+             }
+             const user = {
+                 firstName:'美丽',
+                 lastName:'齐'
+             }
+
+             const element = (
+                     //元素中的标签只能有一个根标签
+                     //如果有多个,使用 div 或其他括起来
+                     <div>
+                         <h1>{formatName(user)}</h1>
+                     </div>
+
+             )
+
+            //4.元素多个时,推荐使用小括号括起来,防止出现分号插入的问题
+
+            //5.JSX 本身也是 js
+
+            var a = 10
+            function returnA() {
+                return a
+            }
+
+            function returnJSX() {
+                return element
+            }
+
+            function returnJSX1() {
+                return <div><h1>{formatName(user)}</h1></div>
+            }
+            //渲染
+            //参数1:元素
+            //参数2:容器
+
+
+
+            //6.JSX的属性
+            //JSX属性赋值方式两种:字符串和变量
+            //字符串 "字符串内容"
+            //变量 {变量名}
+
+            //7.JSX 代表 Objects
+            //Babel会将JSX对应转为 React.createElement
+            //参数为空,填null
+            //imgElement 被 babel 编译时,会形成如下效果:
+            const attrElement = <h1 className="h1"></h1>
+            const src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502962401&di=98af662c44a78680656ce8f9e70f4d8d&imgtype=jpg&er=1&src=http%3A%2F%2' +
+                    'Fcdn.duitang.com%2Fuploads%2Fitem%2F201602%2F22%2F201602221' +
+                    '35935_ZkijU.thumb.700_0.jpeg'
+        const imgElement = <img className="myImage" src={src} />
+        var reactElement = React.createElement(
+                'img',
+                {src: src,className:'myImage'},
+                null
+        )
+        ReactDOM.render(
+                reactElement,
+                document.getElementById('root')
+        )
+
+    </script>
+</body>
+</html>
