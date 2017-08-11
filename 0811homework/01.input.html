@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .input {
+            height: 30px;
+            outline: none;
+            visibility: visible;
+            border: 10px solid deepskyblue;
+        }
+        .pp {
+            width: 70px;
+           text-align: center;
+        }
+        img {
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+        }
+        .out {
+            height: 30px;
+            border:10px solid deepskyblue;
+            outline: none;
+            visibility: hidden;
+        }
+    </style>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        var tf = false;
+        class Input extends React.Component {
+            constructor (props) {
+                super(props)
+                this.state = {
+                    value: '请输入',
+                    className:'input'
+                }
+            }
+
+            changeVaule(event) {
+                this.setState ({
+                    value:event.target.value,
+                })
+            }
+
+            changeClass() {
+                tf = !tf
+                if (tf) {
+                    this.setState({
+                        className:'out'
+                    })
+                }else {
+                    this.setState({
+                        className:'input'
+                    })
+                }
+
+            }
+
+            render() {
+                return (
+                        <div>
+                            <input type="text" value={this.state.value}
+                                   onChange={this.changeVaule.bind(this)} className={this.state.className}/>
+                            <p className="pp" onClick={this.changeClass.bind(this)}><img src="D35B2985856CD9AEC43E3DFA88825B20.png"/>
+                                {this.state.value}</p>
+                        </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+                <Input/>,
+                document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
